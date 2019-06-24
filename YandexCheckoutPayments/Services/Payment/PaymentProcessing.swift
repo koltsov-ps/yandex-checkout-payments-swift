@@ -35,7 +35,7 @@ protocol PaymentProcessing {
 
     func tokenizeBankCard(clientApplicationKey: String,
                           bankCard: BankCard,
-                          confirmation: Confirmation,
+                          confirmation: Confirmation?,
                           amount: MonetaryAmount?,
                           tmxSessionId: String) -> Promise<Tokens>
 

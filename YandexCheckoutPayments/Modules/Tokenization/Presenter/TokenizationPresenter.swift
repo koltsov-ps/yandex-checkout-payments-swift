@@ -41,7 +41,7 @@ class TokenizationPresenter: NSObject { // NSObject needs for PKPaymentAuthoriza
                              output: self,
                              testModeSettings: inputData.testModeSettings,
                              paymentMethodsModuleInput: paymentMethodsModuleInput,
-                             returnUrl: inputData.returnUrl ?? Constants.returnUrl,
+                             returnUrl: inputData.returnUrl,
                              isLoggingEnabled: inputData.isLoggingEnabled)
             }
         }
@@ -357,7 +357,7 @@ extension TokenizationPresenter: TokenizationModuleInput {
     func start3dsProcess(requestUrl: String, redirectUrl: String) {
         let moduleInputData
             = CardSecModuleInputData(requestUrl: requestUrl,
-                                     redirectUrl: inputData.returnUrl ?? Constants.returnUrl,
+                                     redirectUrl: redirectUrl,
                                      isLoggingEnabled: inputData.isLoggingEnabled)
         present3dsModule(inputData: moduleInputData)
     }
@@ -698,7 +698,7 @@ private func makeStrategy(paymentOption: PaymentOption,
                           output: TokenizationStrategyOutput?,
                           testModeSettings: TestModeSettings?,
                           paymentMethodsModuleInput: PaymentMethodsModuleInput?,
-                          returnUrl: String,
+                          returnUrl: String?,
                           isLoggingEnabled: Bool) -> TokenizationStrategyInput {
 
     let authorizationService = AuthorizationProcessingAssembly
@@ -716,10 +716,10 @@ private func makeStrategy(paymentOption: PaymentOption,
     if let bankCard = try? BankCardStrategy(paymentOption: paymentOption, returnUrl: returnUrl) {
         strategy = bankCard
     } else if let wallet = try? WalletStrategy(authorizationService: authorizationService,
-                                               paymentOption: paymentOption, returnUrl: returnUrl) {
+                                               paymentOption: paymentOption, returnUrl: returnUrl ?? Constants.returnUrl) {
         strategy = wallet
     } else if let linkedBankCard = try? LinkedBankCardStrategy(authorizationService: authorizationService,
-                                                               paymentOption: paymentOption, returnUrl: returnUrl) {
+                                                               paymentOption: paymentOption, returnUrl: returnUrl ?? Constants.returnUrl) {
         strategy = linkedBankCard
     } else if let sberbankStrategy = try? SberbankStrategy(paymentOption: paymentOption) {
         strategy = sberbankStrategy

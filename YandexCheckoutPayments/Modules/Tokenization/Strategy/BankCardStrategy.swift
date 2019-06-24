@@ -9,9 +9,9 @@ final class BankCardStrategy {
     private weak var bankCardDataInputModule: BankCardDataInputModuleInput?
 
     private let paymentOption: PaymentOption
-    private let returnUrl: String
+    private let returnUrl: String?
 
-    init(paymentOption: PaymentOption, returnUrl: String) throws {
+    init(paymentOption: PaymentOption, returnUrl: String?) throws {
         guard case .bankCard = paymentOption.paymentMethodType else {
             throw TokenizationStrategyError.incorrectPaymentOptions
         }
@@ -99,6 +99,7 @@ private func makeCorrectExpiryMonth(_ month: String) -> String {
     return month.count > 1 ? month : "0" + month
 }
 
-private func makeConfirmation(returnUrl: String) -> Confirmation {
+private func makeConfirmation(returnUrl: String?) -> Confirmation? {
+    guard let returnUrl = returnUrl else { return nil }
     return Confirmation(type: .redirect, returnUrl: returnUrl)
 }
