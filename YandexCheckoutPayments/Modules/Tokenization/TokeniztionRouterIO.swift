@@ -27,8 +27,8 @@ protocol TokenizationRouterInput: class {
     func presentLogoutConfirmation(inputData: LogoutConfirmationModuleInputData,
                                    moduleOutput: LogoutConfirmationModuleOutput)
 
-    func present3dsModule(inputData: CardSecModuleInputData,
-                          moduleOutput: CardSecModuleOutput)
+//    func present3dsModule(inputData: CardSecModuleInputData,
+//                          moduleOutput: CardSecModuleOutput)
 
     func presentApplePay(inputData: ApplePayModuleInputData,
                          moduleOutput: ApplePayModuleOutput)

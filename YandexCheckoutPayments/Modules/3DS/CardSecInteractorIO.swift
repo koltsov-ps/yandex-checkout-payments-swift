@@ -1,5 +1,5 @@
-protocol CardSecInteractorInput: AnalyticsTrackable {}
-
-protocol CardSecInteractorOutput: class {
-    func didSuccessfullyPassedCardSec()
-}
+//protocol CardSecInteractorInput: AnalyticsTrackable {}
+//
+//protocol CardSecInteractorOutput: class {
+//    func didSuccessfullyPassedCardSec()
+//}

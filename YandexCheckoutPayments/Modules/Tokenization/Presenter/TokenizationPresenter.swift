@@ -191,13 +191,13 @@ extension TokenizationPresenter: TokenizationStrategyOutput {
         }
     }
 
-    func present3dsModule(inputData: CardSecModuleInputData) {
-        DispatchQueue.main.async { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.router.present3dsModule(inputData: inputData,
-                                               moduleOutput: strongSelf)
-        }
-    }
+//    func present3dsModule(inputData: CardSecModuleInputData) {
+//        DispatchQueue.main.async { [weak self] in
+//            guard let strongSelf = self else { return }
+//            strongSelf.router.present3dsModule(inputData: inputData,
+//                                               moduleOutput: strongSelf)
+//        }
+//    }
 
     func presentYandexAuthModule() {
         let moduleInputData = YandexAuthModuleInputData(tokenizationSettings: inputData.tokenizationSettings,
@@ -354,21 +354,21 @@ extension TokenizationPresenter: TokenizationInteractorOutput {
 // MARK: - TokenizationModuleInput
 
 extension TokenizationPresenter: TokenizationModuleInput {
-    func start3dsProcess(requestUrl: String, redirectUrl: String) {
-        let moduleInputData
-            = CardSecModuleInputData(requestUrl: requestUrl,
-                                     redirectUrl: redirectUrl,
-                                     isLoggingEnabled: inputData.isLoggingEnabled)
-        present3dsModule(inputData: moduleInputData)
-    }
+//    func start3dsProcess(requestUrl: String, redirectUrl: String) {
+//        let moduleInputData
+//            = CardSecModuleInputData(requestUrl: requestUrl,
+//                                     redirectUrl: redirectUrl,
+//                                     isLoggingEnabled: inputData.isLoggingEnabled)
+//        present3dsModule(inputData: moduleInputData)
+//    }
 
-    func start3dsProcess(requestUrl: String) {
-        let moduleInputData
-            = CardSecModuleInputData(requestUrl: requestUrl,
-                                     redirectUrl: inputData.returnUrl ?? Constants.returnUrl,
-                                     isLoggingEnabled: inputData.isLoggingEnabled)
-        present3dsModule(inputData: moduleInputData)
-    }
+//    func start3dsProcess(requestUrl: String) {
+//        let moduleInputData
+//            = CardSecModuleInputData(requestUrl: requestUrl,
+//                                     redirectUrl: inputData.returnUrl ?? Constants.returnUrl,
+//                                     isLoggingEnabled: inputData.isLoggingEnabled)
+//        present3dsModule(inputData: moduleInputData)
+//    }
 }
 
 // MARK: - PaymentMethodsModuleOutput
@@ -614,15 +614,15 @@ extension TokenizationPresenter: LogoutConfirmationModuleOutput {
 
 // MARK: - CardSecModuleOutput
 
-extension TokenizationPresenter: CardSecModuleOutput {
-    func didSuccessfullyPassedCardSec(on module: CardSecModuleInput) {
-        moduleOutput?.didSuccessfullyPassedCardSec(on: self)
-    }
-
-    func didPressCloseButton(on module: CardSecModuleInput) {
-        close()
-    }
-}
+//extension TokenizationPresenter: CardSecModuleOutput {
+//    func didSuccessfullyPassedCardSec(on module: CardSecModuleInput) {
+//        moduleOutput?.didSuccessfullyPassedCardSec(on: self)
+//    }
+//
+//    func didPressCloseButton(on module: CardSecModuleInput) {
+//        close()
+//    }
+//}
 
 // MARK: - ApplePayModuleOutput
 

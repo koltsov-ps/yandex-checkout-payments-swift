@@ -1,3 +1,3 @@
-protocol WebBrowserRouterInput: class {
-    func closeModule()
-}
+//protocol WebBrowserRouterInput: class {
+//    func closeModule()
+//}

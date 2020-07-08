@@ -922,13 +922,13 @@ extension TokenizationViewController: TokenizationViewInput {
 // MARK: - TokenizationModuleInput
 
 extension TokenizationViewController: TokenizationModuleInput {
-    func start3dsProcess(requestUrl: String, redirectUrl: String) {
-        output.start3dsProcess(requestUrl: requestUrl, redirectUrl: redirectUrl)
-    }
-
-    func start3dsProcess(requestUrl: String) {
-        output.start3dsProcess(requestUrl: requestUrl)
-    }
+//    func start3dsProcess(requestUrl: String, redirectUrl: String) {
+//        output.start3dsProcess(requestUrl: requestUrl, redirectUrl: redirectUrl)
+//    }
+//
+//    func start3dsProcess(requestUrl: String) {
+//        output.start3dsProcess(requestUrl: requestUrl)
+//    }
 }
 
 // MARK: - PKPaymentAuthorizationViewController - Presentable

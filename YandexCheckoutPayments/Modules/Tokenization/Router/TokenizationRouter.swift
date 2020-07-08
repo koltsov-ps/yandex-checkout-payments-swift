@@ -79,10 +79,10 @@ extension TokenizationRouter: TokenizationRouterInput {
         transitionHandler?.present(viewController, animated: true)
     }
 
-    func present3dsModule(inputData: CardSecModuleInputData, moduleOutput: CardSecModuleOutput) {
-        let viewController = CardSecAssembly.makeModule(inputData: inputData, moduleOutput: moduleOutput)
-        transitionHandler?.show(viewController, sender: self)
-    }
+//    func present3dsModule(inputData: CardSecModuleInputData, moduleOutput: CardSecModuleOutput) {
+//        let viewController = CardSecAssembly.makeModule(inputData: inputData, moduleOutput: moduleOutput)
+//        transitionHandler?.show(viewController, sender: self)
+//    }
 
     func presentYandexAuth(inputData: YandexAuthModuleInputData,
                            moduleOutput: YandexAuthModuleOutput) {

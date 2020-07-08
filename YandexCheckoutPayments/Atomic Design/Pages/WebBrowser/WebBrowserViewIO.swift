@@ -21,17 +21,17 @@
  * THE SOFTWARE.
  */
 
-import UIKit
-
-protocol WebBrowserViewInput: NotificationPresenting, ActivityIndicatorPresenting {
-    func showRequest(_ request: URLRequest)
-    func updateToolBar()
-    func setupToolBar(_ options: WebBrowserOptions)
-    func setNavigationBar(_ options: WebBrowserOptions)
-    func setScreenName(_ screenName: String?)
-}
-
-protocol WebBrowserViewOutput: class, UIWebViewDelegate {
-    func setupView()
-    func didPressCloseButton()
-}
+//import UIKit
+//
+//protocol WebBrowserViewInput: NotificationPresenting, ActivityIndicatorPresenting {
+//    func showRequest(_ request: URLRequest)
+//    func updateToolBar()
+//    func setupToolBar(_ options: WebBrowserOptions)
+//    func setNavigationBar(_ options: WebBrowserOptions)
+//    func setScreenName(_ screenName: String?)
+//}
+//
+//protocol WebBrowserViewOutput: class, UIWebViewDelegate {
+//    func setupView()
+//    func didPressCloseButton()
+//}

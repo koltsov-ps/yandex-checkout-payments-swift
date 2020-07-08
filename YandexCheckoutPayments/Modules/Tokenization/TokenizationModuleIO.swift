@@ -104,14 +104,14 @@ public protocol TokenizationModuleInput: class {
     /// - Parameters:
     ///   - requestUrl: URL string for request website.
     ///   - redirectUrl: URL string for website of the card issuing bank to authorize the transaction.
-    @available(*, deprecated, message: "redirectUrl no longer needed, will be deleted in next version")
-    func start3dsProcess(requestUrl: String, redirectUrl: String)
+//    @available(*, deprecated, message: "redirectUrl no longer needed, will be deleted in next version")
+//    func start3dsProcess(requestUrl: String, redirectUrl: String)
 
     /// Start 3-D Secure process.
     ///
     /// - Parameters:
     ///   - requestUrl: URL string for request website.
-    func start3dsProcess(requestUrl: String)
+//    func start3dsProcess(requestUrl: String)
 }
 
 /// Output for tokenization module.
